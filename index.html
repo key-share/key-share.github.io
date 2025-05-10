@@ -4,23 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Key-Share`s blogs</title>
-  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/prism-tomorrow.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/prism-line-numbers.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/github-markdown-light.css">
+  <script src="./script/prism.min.js"></script>
   <script src="./script/marked.min.js"></script>
+  <script src="./script/tailwindcss.js"></script>
+  <script src="./script/prism-line-numbers.min.js"></script>
 </head>
 <body>
   <div id="header">
-    
   </div>
   <div id="main">
-    <textarea style="font-size: 20px; width: 300px; height: 800px;" id="responseBox" name="responseBox" rows="4" cols="150" readonly>
-      # Example Markdown
-      This is an example of **Markdown** text.
-      - Item 1
-      - Item 2
-    </textarea>
-    <script>
-      main.innerHTML = marked.parse(responseBox.value)
-    </script>
+    <div id="bloginfo">
+      <div id="usrinfo">
+        <div id="image">
+          <img src="./src/将图片转黑白漫画风格.png" style="height: 120px; width: 120px;border-radius: 60px;">
+        </div>
+        <div id="name">
+          key share
+        </div>
+        <div id="nameother">
+          希望不要挂科~~
+        </div>
+        <div id="mysocil">
+          <div id="bilibili">
+            <img src="./src/bilibili-fill.svg" style="height: 35px;"/>
+          </div>
+          <div id="github">
+            <img src="./src/github-fill.svg" style="height: 35px;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="showmain">
+      <div id="title" class="markdown-body">
+        <textarea id="markdown">
+# hello  
+### [Bilibili](https://www.bilibili.com)  
+```js
+const getGithub =  document.getElementById("github");
+
+getGithub.addEventListener("click", function(){
+    window.open("https://github.com/key-share", "", "")
+});
+
+const getBilibili = document.getElementById("bilibili");
+
+getBilibili.addEventListener("click", function(){
+    window.open("https://space.bilibili.com/593947152", "", "")
+});
+```
+        </textarea>
+      </div>
+    </div>
+    <div id="location">
+      location
+    </div>
   </div>
 </body>
 <script type="text/javascript" src="./script/script.js"></script>

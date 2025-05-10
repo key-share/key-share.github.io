@@ -1,3 +1,6 @@
+# hello
+### [Bilibili](https://www.bilibili.com)  
+```js
 const getGithub =  document.getElementById("github");
 
 getGithub.addEventListener("click", function(){
@@ -9,9 +12,4 @@ const getBilibili = document.getElementById("bilibili");
 getBilibili.addEventListener("click", function(){
     window.open("https://space.bilibili.com/593947152", "", "")
 });
-
-const title = document.getElementById("title");
-
-const md = document.getElementById("markdown").value;
-title.innerHTML = marked.parse(md);
-
+```
