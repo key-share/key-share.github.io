@@ -127,7 +127,7 @@
   height: .25em;
   padding: 0;
   margin: 1.5rem 0;
-  background-color: #d1d9e0;
+  background-color: #c1cad2;
   border: 0;
 }
 
@@ -255,7 +255,7 @@
   line-height: 10px;
   color: #1f2328;
   vertical-align: middle;
-  background-color: #f6f8fa;
+  background-color: #ffffff;
   border: solid 1px #d1d9e0b3;
   border-bottom-color: #d1d9e0b3;
   border-radius: 6px;
@@ -741,7 +741,7 @@
   font-size: 85%;
   line-height: 1.45;
   color: #1f2328;
-  background-color: #f6f8fa;
+  background-color: #294057;
   border-radius: 6px;
 }
 
