@@ -1,0 +1,132 @@
+---
+const { frontmatter } = Astro.props;
+const h = 250;
+import '../style/global.css'
+---
+<meta charset="utf-8">
+<!-- <link rel="stylesheet" type="text/css" href="../src/style/global.css"> -->
+<style>
+    html{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 700;
+    }
+</style>
+<div class="md-main">
+    <div class="title">
+        <div></div>
+        <h2>{frontmatter.title}</h2>
+    </div>
+    <div class="info">
+        <div class="tags">
+            <svg class="icon" style="margin-left: 25px; margin-right: 5px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3380" width="128" height="128"><path d="M725.333333 170.666667h74.709334C864.853333 170.666667 917.333333 223.189333 917.333333 288.096V799.893333C917.333333 864.757333 864.832 917.333333 800.042667 917.333333H223.957333C159.146667 917.333333 106.666667 864.810667 106.666667 799.904V288.106667C106.666667 223.242667 159.168 170.666667 223.957333 170.666667H298.666667v-32a32 32 0 0 1 64 0v32h298.666666v-32a32 32 0 0 1 64 0v32z m0 64v32a32 32 0 0 1-64 0v-32H362.666667v32a32 32 0 0 1-64 0v-32h-74.709334A53.354667 53.354667 0 0 0 170.666667 288.096V799.893333A53.301333 53.301333 0 0 0 223.957333 853.333333h576.085334A53.354667 53.354667 0 0 0 853.333333 799.904V288.106667A53.301333 53.301333 0 0 0 800.042667 234.666667H725.333333z m-10.666666 224a32 32 0 0 1 0 64H309.333333a32 32 0 0 1 0-64h405.333334zM586.666667 618.666667a32 32 0 0 1 0 64H309.333333a32 32 0 0 1 0-64h277.333334z" p-id="3381"></path></svg>
+            <div style="background-color: white !important;">{frontmatter.pubDate.toString().slice(0,10)}</div>
+        </div>
+        <div class="tags">
+            <svg class="icon" style="margin-left: 5px; margin-right: 5px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3542" width="128" height="128"><path d="M821.333333 256a32 32 0 0 1 64 0v565.333333c0 64.8-52.533333 117.333333-117.333333 117.333334H256c-64.8 0-117.333333-52.533333-117.333333-117.333334V202.666667c0-64.8 52.533333-117.333333 117.333333-117.333334h597.333333a32 32 0 0 1 0 64H256a53.333333 53.333333 0 0 0-53.333333 53.333334v618.666666a53.333333 53.333333 0 0 0 53.333333 53.333334h512a53.333333 53.333333 0 0 0 53.333333-53.333334V256zM341.333333 437.333333a32 32 0 0 1 0-64h341.333334a32 32 0 0 1 0 64H341.333333z m0 170.666667a32 32 0 0 1 0-64h213.333334a32 32 0 0 1 0 64H341.333333z" p-id="3543"></path></svg>
+            <div>{frontmatter.classification}</div>
+        </div>
+        <div class="tags">
+            <svg class="icon" style="margin-left: 5px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3218" width="128" height="128"><path d="M651.424 217.066667a32 32 0 0 1 62.485333 13.866666L682.261333 373.333333H800a32 32 0 0 1 31.946667 30.122667L832 405.333333a32 32 0 0 1-32 32H668.032l-33.184 149.333334H800a32 32 0 0 1 31.946667 30.122666L832 618.666667a32 32 0 0 1-32 32H620.629333l-34.72 156.266666a32 32 0 0 1-36.341333 24.661334l-1.845333-0.352a32 32 0 0 1-24.298667-38.186667L555.061333 650.666667H407.296l-34.72 156.288a32 32 0 0 1-36.341333 24.64l-1.845334-0.341334a32 32 0 0 1-24.298666-38.186666L341.728 650.666667 224 650.666667a32 32 0 0 1-31.946667-30.122667L192 618.666667a32 32 0 0 1 32-32h131.957333l33.184-149.333334H224a32 32 0 0 1-31.946667-30.122666L192 405.333333a32 32 0 0 1 32-32h179.36l34.730667-156.266666a32 32 0 0 1 36.341333-24.661334l1.845333 0.352a32 32 0 0 1 24.298667 38.186667l-31.648 142.378667h147.765333zM602.474667 437.333333H454.698667l-33.184 149.333334h147.776l33.184-149.333334z" p-id="3219"></path></svg>
+            {frontmatter.tags.map(
+                (tags: any) => <div>
+                    {tags}
+                </div>
+            )}
+        </div>
+    </div>
+    <div class="image">
+        <img src={frontmatter.image.url} alt={frontmatter.image.alt}>
+    </div>
+    <div id="main-markdown">
+         <slot></slot>
+          
+    </div>
+</div>
+<style define:vars={{h}}> 
+    .md-main{
+        width: 1000px;
+        height: 100vh;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+    }
+    .md-main::-webkit-scrollbar{
+        width: 0;
+    }
+    .title{
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        border-bottom: 1px solid #d1d9e0b3;
+        padding-bottom: 13px;
+    }
+    .title > div{
+        width: 5px;
+        height: 2.25rem;
+        border-radius: 5px;
+        background-color: rgb(0, 180, 255);
+    }
+    .title > h2{
+        margin: 0;
+        margin-left: 20px;
+        font-size: 2.25rem;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 700;
+    }
+    .tags{
+        display: flex;
+        div{
+            font-size: 0.87rem;
+            font-weight: 500;
+        }
+    }
+    .tags > svg{
+        width: 22px;
+        height: 22px;
+        padding: 4px;
+        border-radius: 5px;
+        fill: oklch(0.55 0.12 var(--h));
+        background-color: oklch(0.95 0.025 var(--h));
+
+    }
+    .tags > svg:hover{
+        background-color: oklch(0.9 0.05 var(--h)):
+    }
+    .info > div{
+        display: flex;
+        align-items: center;
+        
+        div{
+            margin: 2px;
+            height: 30px;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 5px;
+            line-height: 30px;
+        }
+        div:hover{
+            background-color: oklch(0.95 0.025 var(--h));
+        }
+    }
+    .info{
+        display: flex;
+        flex-flow: row;
+        margin-top: 10px;
+    }
+    .image{
+        height: 400px;
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 10px;
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+    .heading-wrapper{
+        background-color: aqua;
+    }
+</style>
