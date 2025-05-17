@@ -7,20 +7,11 @@
 // });
 
 import rehypeWrap from 'rehype-wrap';
-import rehype-slug from 'rehypePlugins'
+import customRehypePlugin from './src/plugings/markdown'
 
 export default {
   markdown: {
     rehypePlugins: 
-    [
-      [rehypeWrap, 
-        {
-        selector: 'h1, h2, h3, h4, h5, h6',
-        multiple: true,
-        wrapper: 'div.heading-wrapper',
-        }],
-      'rehype-slug',
-      'rehype-autolink'  
-    ]
+    [ customRehypePlugin ]
   }
 }
